@@ -26,9 +26,13 @@ I later configured the PFSense WAN-interface to use my personal computer's NIC c
 
 ## Setting up Ubuntu VM
 
-I decided to run Splunk and malware analysis tools on Linux OS because it is more lightweight and customizable compared to Windows OS. I built a new Ubuntu 64bit VM on VirtualBox. I allocated the VM 8192MB of RAM, 2 CPU cores and 160gb of dynamic disk space. I selected the same network adapter as with my gateway VM and set the adapter mode as internal network. I set the boot order to 1. hard drive and 2. optical. I downloaded Ubuntu Server 24.04.2 .ISO image from Ubuntu.com and booted the VM from the .ISO image. The Ubuntu installer started and I selected to install OpenSSH for future Kali Linux connections. The installer was not able to configure IP-address from DHCP-server, I need to set the IP-address manually for now and later access FPSense webConfigurator on Ubuntu VM's browser to configure the DHCP-server. The Ubuntu server doesn't come with a graphical user interface so I need to install the GUI-package. First I need to set a temporary IP-address using the command: 
+I decided to run Splunk and malware analysis tools on Linux OS because it is more lightweight and customizable compared to Windows OS. I built a new Ubuntu 64bit VM on VirtualBox. I allocated the VM 8192MB of RAM, 2 CPU cores and 160gb of dynamic disk space. I selected the same network adapter as with my gateway VM and set the adapter mode as internal network. I set the boot order to 1. hard drive and 2. optical. I downloaded Ubuntu Server 24.04.2 .ISO image from Ubuntu.com and booted the VM from the .ISO image. The Ubuntu installer started and I selected to install OpenSSH for future Kali Linux connections. The installer was not able to configure IP-address from DHCP-server, I need to set a temporary IP-address manually for now and later access FPSense webConfigurator on Ubuntu VM's browser to configure the DHCP-server. The Ubuntu server doesn't come with a graphical user interface so I need to install the GUI-package. First I need to find the name of my ethernet interface: 
+
+![kuva](https://github.com/user-attachments/assets/6ea1b300-7eca-40ad-884b-6ef80e1b4e5b)
+
+Then I need to set my IPv4 address to my ethernet interface:
 ```
-sudo ip addr add 10.10.10.1/24 dev enp0s3
+sudo ip addr add 10.10.10.11/24 dev enp0s3
 ```
 To set the link up:
 ```
@@ -38,6 +42,8 @@ To confirm that the link is up:
 ```
 sudo ip address show dev enp0s3 
 ```
+![kuva](https://github.com/user-attachments/assets/bbd4400e-9e44-4c0d-8a8b-43782da40947)
+
 To set the default gateway address to my PFSense gateway:
 ```
 sudo ip route add default via 10.10.10.254 
@@ -46,8 +52,13 @@ To confirm that the correct default gateway is set:
 ```
 sudo ip route show 
 ```
+![kuva](https://github.com/user-attachments/assets/d880ab79-c67e-4bfe-9450-3c73d2829e52)
+
 To ping the PFSense gateway device to confirm that the connection is established:
 ```
 ping -c 3 10.10.10.254
 ```
+![kuva](https://github.com/user-attachments/assets/22a2a64f-1049-42af-b6de-e1e8b60387bc)
+
+All the ICMP-packets were able to reach the PFSense gateway device so it seems that the connection is established.
 
