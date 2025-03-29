@@ -18,7 +18,7 @@ Adapter 2 is for external network. I chose bridged adapter because that allows o
 
 I booted up the VM with the .ISO installation disk attached. I selected my VM's internal network as LAN and the external bridged network as WAN. I had the option to choose between ZFS and UFS for a filesystem. I decided to go with UFS because it is more suitable for my lightweight firewall/router setup which doesn't require the extra features provided by ZFS. UFS is more simpler and uses less memory compared to ZFS. 
 
-After the installation was complete I configured the LAN-interface IP-addresses. I set the LAN host IP-addresses to range between 10.10.10.1-50 (255.255.255.0 subnet mask). I don't see a need to configure an IPv6-address for my LAN. I enabled DHCP-server for the LAN. Here is a screenshot of the PFSense console:
+After the installation was complete I configured LAN-interface IP-addresses. I set the LAN host IP-addresses to range between 10.10.10.1-50 (255.255.255.0 subnet mask). I don't see a need to configure an IPv6-address for my LAN. I enabled DHCP-server for the LAN. Here is a screenshot of the PFSense console:
 
 ![kuva](https://github.com/user-attachments/assets/411948e8-35e7-47cf-b794-a91ecfeedfe6)
 
