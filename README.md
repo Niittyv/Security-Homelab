@@ -4,7 +4,7 @@ I've decided to build a VirtualBox internal network to simulate a corporate LAN 
 
 As an external adversary I've decided to use VirtualBox with Kali Linux VM installed on my Thinkpad X230 laptop. This external VM connects to the simulated corporate network through the PFSense gateway VM via Bridged connection. I want the Kali VM to act as an independent host capable of interacting with surrounding hosts on the same LAN network, that is why I chose my Kali VM to run in a bridged networking mode. The bridged mode allows my Kali VM to have its own IP-address on my home network so that it can interact with other hosts on the same network, simulating an attacker who tries to infiltrate into a corporate network. I have to be careful though not to execute malware downloaded from the internet on this bridged VM because that malware can in the worst scenario spread to other hosts in my home network including my PC.
 
-![homelab (1)](https://github.com/user-attachments/assets/2b7488b1-b641-4d94-a15d-0acfd3e05861)
+![homelab](https://github.com/user-attachments/assets/af7aa448-5172-41fe-9d8c-914bfce4d4a4)
 
 ## Setting up PFSense Gateway VM
 
