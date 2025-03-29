@@ -10,7 +10,7 @@ As an external adversary I've decided to use VirtualBox with Kali Linux VM insta
 
 PFSense runs on FreeBSD which is a lightweight operating system, thus suitable for my use case. I chose PFSense as a virtual gateway device for its low resource requirements in terms of CPU and memory. I'll be running multiple virtual machines on the same host which makes it important to save resources wherever possible.
 
-On VirtualBox I built a new Debian 64bit VM "pfsense". I allocated 1024MB of RAM, 1 CPU core and 8gb of dynamic disc space. I set the boot order to 1. hard drive and 2. optical. For now the hard drive is empty so we will boot from PFSense .ISO image I downloaded from netgate. In the networking settings I will enable two network adapters:
+On VirtualBox I built a new Debian 64bit VM. I allocated 1024MB of RAM, 1 CPU core and 8gb of dynamic disc space. I set the boot order to 1. hard drive and 2. optical. For now the hard drive is empty so we will boot from PFSense .ISO image I downloaded from netgate. In the networking settings I will enable two network adapters:
 
 Adapter 1 is for internal network to connect my other VMs to the PFSense gateway. I selected AMD PCnet-FAST III (Am79C973) as the virtualized network adapter because it is supported by almost all quest operating systems.
 
