@@ -22,3 +22,32 @@ After the installation was complete I configured LAN-interface IP-addresses. I s
 
 ![kuva](https://github.com/user-attachments/assets/411948e8-35e7-47cf-b794-a91ecfeedfe6)
 
+I later configured the PFSense WAN-interface to use my personal computer's NIC connected to the internet. I only did this to later download some essential packages on Ubuntu VM from the internet. After downloading the packages I can configure the PFSense WAN-interface to use another NIC on my PC without internet connection and will connect to the Kali machine on the same LAN instead.
+
+## Setting up Ubuntu VM
+
+I decided to run Splunk and malware analysis tools on Linux OS because it is more lightweight and customizable compared to Windows OS. I built a new Ubuntu 64bit VM on VirtualBox. I allocated the VM 8192MB of RAM, 2 CPU cores and 160gb of dynamic disk space. I selected the same network adapter as with my gateway VM and set the adapter mode as internal network. I set the boot order to 1. hard drive and 2. optical. I downloaded Ubuntu Server 24.04.2 .ISO image from Ubuntu.com and booted the VM from the .ISO image. The Ubuntu installer started and I selected to install OpenSSH for future Kali Linux connections. The installer was not able to configure IP-address from DHCP-server, I need to set the IP-address manually for now and later access FPSense webConfigurator on Ubuntu VM's browser to configure the DHCP-server. The Ubuntu server doesn't come with a graphical user interface so I need to install the GUI-package. First I need to set a temporary IP-address using the command: 
+```
+sudo ip addr add 10.10.10.1/24 dev enp0s3
+```
+To set the link up:
+```
+sudo ip link set dev enp0s3 up
+```
+To confirm that the link is up:
+```
+sudo ip address show dev enp0s3 
+```
+To set the default gateway address to my PFSense gateway:
+```
+sudo ip route add default via 10.10.10.254 
+```
+To confirm that the correct default gateway is set:
+```
+sudo ip route show 
+```
+To ping the PFSense gateway device to confirm that the connection is established:
+```
+ping -c 3 10.10.10.254
+```
+
