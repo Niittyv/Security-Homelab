@@ -60,5 +60,10 @@ ping -c 3 10.10.10.254
 ```
 ![kuva](https://github.com/user-attachments/assets/22a2a64f-1049-42af-b6de-e1e8b60387bc)
 
-All the ICMP-packets were able to reach the PFSense gateway device so it seems that the connection is established.
+All ICMP-packets were able to reach the PFSense gateway device so it seems that the connection was succesfully established. Next I need to download the Ubuntu GUI-package using commands:
+```
+sudo apt-get update
+sudo apt-get install ubuntu-desktop
+```
+After running these commands it seems that fetching the files from Ubuntu server failed due to problems with address resolution. I haven't yet set up client DNS nameservers so I had to open /etc/resolv.conf and add "nameserver 8.8.8.8" and "nameserver 8.8.4.4" to the list of nameservers. Now when I run the commands above I'm able to reach Ubuntu server and fetch the files from there. Installing Ubuntu desktop takes quite a while.
 
