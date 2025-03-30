@@ -67,10 +67,6 @@ sudo apt-get install ubuntu-desktop
 ```
 After running these commands it seems that fetching the files from Ubuntu server failed due to problems with address resolution. I haven't yet set up client DNS nameservers so I had to open /etc/resolv.conf and add "nameserver 8.8.8.8" and "nameserver 8.8.4.4" to the list of nameservers. Now when I run the commands above I'm able to reach Ubuntu server and fetch the files from there. Installing Ubuntu desktop took quite a while but is finally complete.
 
-
-![ubuntu](https://github.com/user-attachments/assets/ddc66204-aa7a-4401-81e9-f8a03c389c0a)
-
-
 Now it is time to access the PFSense WebConfigurator on Ubuntu VM's web browser to configure DHCP-server on https://10.10.10.254/. It seems that the IPv4 configuration type is set to Static IPv4, this explains why my Ubuntu VM was not automically assigned an IPv4-address from the DHCP-server during installation. I choose to keep the IPv4 confguration type as static for my LAN and assigned 10.10.10.254 as the DNS-server for the LAN.
 
 
@@ -86,9 +82,5 @@ While we're at it let's check the firewall rules for the LAN. There are three LA
 ## Setting up Windows 10 workstation VM
 
 This device simulates a company employee's workstation. I downloaded a Windows 10 media creation tool from Microsoft's official web server. I use this tool to create an installation .ISO image. I built a Windows VM using the .ISO image on VirtualBox and allocated 2048MB of RAM, 1 CPU core and 50gb of dynamic disc space. I connected the VM to the same internal network with the two previous virtual machines and used the same network adapter. I booted the VM and started the Windows 10 Pro installation process.
-
-
-![windows](https://github.com/user-attachments/assets/839afe63-94ac-4790-967b-18909f969461)
-
 
 The Windows 10 installation was succesful but the operating system was not able to detect the network interface connected to the internal network.
