@@ -103,4 +103,11 @@ Out of curiosity I wanted to ping the Windows workstation from the PFSense gatew
 
 ![kuva](https://github.com/user-attachments/assets/7df25e2f-51f9-42e4-afc5-9d8657305388)
 
-It seems that the gateway device is not able to reach the windows device with ICMP-packets. My intuition says that this is because Windows firewall is blocking the inbound ICMP-protocol traffic but I have to make sure of that.
+It seems that the gateway device is not able to reach the windows device with ICMP-packets. My intuition says that this is because Windows firewall is blocking the inbound ICMP-protocol traffic but I have to make sure of that. I opened the Windows firewall settings and disabled Windows firewall for public networks.
+
+![kuva](https://github.com/user-attachments/assets/47fdd7f0-a28a-41d1-a188-99827d4a6441)
+
+Now the ICMP-packets are not dropped by the firewall:
+
+![kuva](https://github.com/user-attachments/assets/4e757428-73bd-492f-b973-dca8c277aad0)
+
