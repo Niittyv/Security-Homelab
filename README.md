@@ -99,5 +99,8 @@ Let's check connectivity to the PFSense gateway device using ICMP-packets. All p
 
 ![kuva](https://github.com/user-attachments/assets/560394d4-cec4-4659-a578-161306225c9d)
 
+Out of curiosity I wanted to ping the Windows workstation from the PFSense gateway VM and got the following result: 
 
+![kuva](https://github.com/user-attachments/assets/7df25e2f-51f9-42e4-afc5-9d8657305388)
 
+It seems that the gateway device is not able to reach the windows device with ICMP-packets. My intuition says that this is because Windows firewall is blocking the inbound ICMP-protocol traffic but I have to make sure of that.
