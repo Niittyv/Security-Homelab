@@ -83,4 +83,7 @@ While we're at it let's check the firewall rules for the LAN. There are three LA
 
 This device simulates a company employee's workstation. I downloaded a Windows 10 media creation tool from Microsoft's official web server. I use this tool to create an installation .ISO image. I built a Windows VM using the .ISO image on VirtualBox and allocated 2048MB of RAM, 1 CPU core and 50gb of dynamic disc space. I connected the VM to the internal network with and selected AMD PCnet-FAST III (Am79C973) as the network adapter. I booted the VM and started the Windows 10 Pro installation process.
 
-The Windows 10 installation was succesful but the operating system was not able to detect the network interface connected to the internal network.
+The Windows 10 installation was succesful but the operating system was not able to detect the network interface connected to the internal network. I had to change the network adapter to Intel PRO/1000 MT Desktop (82540EM) and now the interface popped up in network connections:
+
+![kuva](https://github.com/user-attachments/assets/27eaef9c-9461-4221-8254-ceb3a4430a22)
+
