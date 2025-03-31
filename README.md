@@ -111,3 +111,10 @@ Now the ICMP-packets are not dropped by the firewall:
 
 ![kuva](https://github.com/user-attachments/assets/4e757428-73bd-492f-b973-dca8c277aad0)
 
+## Setting up Linux Kali VM on my Thinkpad X230 laptop
+
+I installed VirtualBox on my laptop but forgot to run the installation file as an administrator. This led to VirtualBox not being allowed to utilize CPU resources for virtualization, even though virtualization is enabled on BIOS. I reinstalled VirtualBox as an administrator and now I'm allowed to access CPU resources and run virtual machines. 
+
+I downloaded Linux Kali prebuild VM from the Linux Kali official website. I added the prebuild machine to VirtualBox and connected the VM to bridged network using AMD PCnet-FAST III (Am79C973) virtual network adapter. I left the VM settings as default. This means that the VM is allocated with 2048MB of RAM, 2 CPU cores and 80gb of dynamic disc space.
+
+I boot up the VM and the operating system is ready to go. No installation is required.
