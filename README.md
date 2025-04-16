@@ -72,7 +72,7 @@ sudo apt-get install ubuntu-desktop
 ```
 After running these commands it seems that fetching the files from Ubuntu server failed due to problems with address resolution. I haven't yet set up client DNS nameservers so I had to open /etc/resolv.conf and add "nameserver 8.8.8.8" and "nameserver 8.8.4.4" to the list of nameservers. I have to note that this is only a temporary solution because the resolv.conf file will reset after reboot, I will add the DNS servers to my PFSense DNS serverlist later when I can access the configuration page on my browser. Now when I run the commands above I'm able to reach Ubuntu server and fetch the files from there. Installing Ubuntu desktop took quite a while but is finally complete.
 
-Now it is time to access the PFSense WebConfigurator on Ubuntu VM's web browser to configure DHCP-server on https://10.10.10.254/. It seems that the IPv4 configuration type is set to Static IPv4, this explains why my Ubuntu VM was not automically assigned an IPv4-address from the DHCP-server during installation. I choose to keep the IPv4 confguration type as static for my LAN and assigned 10.10.10.254, 8.8.8.8, 8.8.4.4 as the DNS-server for the LAN.
+Now it is time to access the PFSense WebConfigurator on Ubuntu VM's web browser to configure DHCP-server on https://10.10.10.254/. It seems that the IPv4 configuration type is set to Static IPv4, this explains why my Ubuntu VM was not automically assigned an IPv4-address from the DHCP-server during installation. I choose to keep the IPv4 confguration type as static for my LAN and assigned 10.10.10.254, 8.8.8.8 and 8.8.4.4 as the DNS-servers for the LAN.
 
 ![kuva](https://github.com/user-attachments/assets/aaf570f3-cfff-4394-b123-43c5769eedb5)
 
