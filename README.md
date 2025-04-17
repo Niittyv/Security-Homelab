@@ -81,6 +81,13 @@ While we're at it let's check the firewall rules for the LAN. There are three LA
 
 ![firewall](https://github.com/user-attachments/assets/a22ae55a-88f2-445b-93d7-cae70af7cb44)
 
+### Setting up Splunk on Ubuntu VM
+
+First I'll run
+'''
+sudo apt-get update && upgrade
+'''
+To update all the installation packages. 
 
 ## Setting up Windows 10 workstation VM
 
@@ -109,6 +116,16 @@ It seems that the gateway device is not able to reach the windows device with IC
 Now the ICMP-packets are not dropped by the firewall:
 
 ![kuva](https://github.com/user-attachments/assets/4e757428-73bd-492f-b973-dca8c277aad0)
+
+## Setting up Windows AD Domain Controller
+
+I downloaded Windows server 2022 trial ISO from Microsoft official web page. I created a new virtual machine with 2048MB RAM, 1 CPU core and 30GB disc space. I connected the VM to internal network with Intel PRO/1000 MT Desktop (82540EM) adapter just like with the Windows 10 machine. I started the VM with Windows server 2022 ISO mounted. I want to install Windows server with full graphical environment:
+
+![kuva](https://github.com/user-attachments/assets/53e89670-51e4-4150-bbdd-900c1ca79c7e)
+
+Windows AD domain controller VM is up and running.
+
+![kuva](https://github.com/user-attachments/assets/f86bc193-9215-4650-bf73-3ab7992c21cc)
 
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
 
