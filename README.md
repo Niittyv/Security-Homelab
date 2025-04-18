@@ -138,9 +138,15 @@ I have now configured AD domain and domain controller. Next I will connect the W
 
 ![kuva](https://github.com/user-attachments/assets/e5891997-19df-4955-846c-c0c71c1e0271)
 
-I allowed remote connections on Windows server VM. I opened system properties on Windows 10 VM and connected the host to the newly created domain.
+I allowed remote connections on Windows server VM. I opened system properties on Windows 10 VM and connected the client host to the newly created domain.
 
 ![kuva](https://github.com/user-attachments/assets/8677398b-3de5-4778-9535-d6fd6f5b5186)
+
+The Windows 10 client was unable to reach NVPorg.local domain because there seems to be a problem with the DNS configuration. Only the PFSense IP address is listed as a DNS server. I made an error in judgement, maybe I'll need to enable the AD DNS server.
+
+![kuva](https://github.com/user-attachments/assets/6ad1f503-e8e2-4956-a91b-75bec0b63b9c)
+
+
 
 
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
