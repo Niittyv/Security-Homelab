@@ -142,17 +142,35 @@ I allowed remote connections on Windows server VM. I opened system properties on
 
 ![kuva](https://github.com/user-attachments/assets/8677398b-3de5-4778-9535-d6fd6f5b5186)
 
-The Windows 10 client was unable to reach NVPorg.local domain because there seems to be a problem with the DNS configuration. Only the PFSense IP address is listed as a DNS server.
+The Windows 10 client was unable to reach NVPorg.local domain because there seems to be a problem with the DNS configuration. Only the PFSense gateway IP-address is listed as a DNS server.
 
 ![kuva](https://github.com/user-attachments/assets/6ad1f503-e8e2-4956-a91b-75bec0b63b9c)
 
-I made an error in judgement when I misconfigured the DNS server to PFSense DNS server instead of AD DNS server. I didn't install DNS server on my AD domain, I'll install it now. Before installing DNS server for my AD domain, I'll set my AD domain IP as static so that the clients will always be able to reach it using the same IP-address. I'll use the IP-address of 10.10.10.14/24 for my AD domain controller.
+I made an error in judgement when I misconfigured the DNS server to PFSense gateway DNS server instead of AD DNS server. I didn't install DNS server on my AD domain, I'll install it now. Before installing DNS server for my AD domain, I'll set my AD domain IP as static so that the clients will always be able to reach it consistently using the same IP-address. I'll use the IP-address of 10.10.10.14/24 for my AD domain controller. I use the AD domain controller IP-address as the DNS server address.
 
-![kuva](https://github.com/user-attachments/assets/1c9c9462-b649-45cb-a737-c1d7af06b83a)
+![kuva](https://github.com/user-attachments/assets/8f9a8496-d293-4714-8875-fcfc108a3f9b)
 
 ![kuva](https://github.com/user-attachments/assets/523276e7-91c7-45f6-a117-7b6c672f5b79)
 
+I'm able to ping the AD domain controller with my Windows 10 client, I'm still not able to connect to the domain though. I do nslookup and see that despite of the client being physically able to reach the domain, the name server can not be resolved properly.
 
+![kuva](https://github.com/user-attachments/assets/8467e97b-c5d9-4a2c-9b8b-0c918777328d)
+
+I run the commands on my Windows 10 VM:
+
+'''
+ipconfig /flushdns
+ipconfig /registerdns
+'''
+
+And now I'm finally able to connect to the domain with my Windows10 client. I'll now create a user for Windows 10 client on AD domain controller.
+
+![kuva](https://github.com/user-attachments/assets/6d74c651-d07a-499d-a65c-6addcd6caa6a)
+
+I'll login to the domain on my Windows 10 client:
+
+![kuva](https://github.com/user-attachments/assets/6ab7cf03-0170-4db1-84f8-036b355e7589)
+![kuva](https://github.com/user-attachments/assets/ced4764d-c8f0-4f68-9b34-46f6d1eebfa0)
 
 
 
