@@ -158,13 +158,10 @@ I'm able to ping the AD domain controller with my Windows 10 client, I'm still n
 
 I run the commands on my Windows 10 VM:
 
-'''
+```
 ipconfig /flushdns
-'''
-
-'''
 ipconfig /registerdns
-'''
+```
 
 And now I'm finally able to connect to the domain with my Windows10 client. I'll now create a user for Windows 10 client on AD domain controller.
 
