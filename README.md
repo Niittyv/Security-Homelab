@@ -160,6 +160,9 @@ I run the commands on my Windows 10 VM:
 
 '''
 ipconfig /flushdns
+'''
+
+'''
 ipconfig /registerdns
 '''
 
