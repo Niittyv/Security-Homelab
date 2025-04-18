@@ -127,11 +127,17 @@ Windows AD domain controller VM is up and running. Now I'm going to configure Ac
 
 ![kuva](https://github.com/user-attachments/assets/3976b2c2-961e-417a-b4ea-a107a363fb2b)
 
+I need to promote this server as the domain controller. I select "Add a new forest" and add .local suffix to my root domain name.
+
+![kuva](https://github.com/user-attachments/assets/ea506bf1-361c-4923-aca9-53135d18d1a7)
+
+I selected Windows Server 2016 for Forest/Domain functional level. I disabled AD DNS server because PFSense takes care of the DNS server. I proceed to complete the installation.
+
+![kuva](https://github.com/user-attachments/assets/c07a920d-09dc-43a3-a229-fe34db9cde80)
 
 
 
 
-![kuva](https://github.com/user-attachments/assets/f86bc193-9215-4650-bf73-3ab7992c21cc)
 
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
 
