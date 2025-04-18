@@ -96,7 +96,7 @@ The Windows 10 installation was succesful but the operating system was not able 
 
 ![kuva](https://github.com/user-attachments/assets/27eaef9c-9461-4221-8254-ceb3a4430a22)
 
-I opened CMD and checked the configuration for network interfaces. It seems that the DHCP-server is up, configured properly and able to lease IP-addresses.
+I opened CMD and checked the configuration for network interfaces. It seems that the DHCP-server is up, configured properly and able to lease IP-addresses. The Windows 10 host is leased with IP-address 10.10.10.2.
 
 ![kuva](https://github.com/user-attachments/assets/4e89bf6d-0599-47ec-826c-82b1b75718f1)
 
@@ -142,9 +142,16 @@ I allowed remote connections on Windows server VM. I opened system properties on
 
 ![kuva](https://github.com/user-attachments/assets/8677398b-3de5-4778-9535-d6fd6f5b5186)
 
-The Windows 10 client was unable to reach NVPorg.local domain because there seems to be a problem with the DNS configuration. Only the PFSense IP address is listed as a DNS server. I made an error in judgement, maybe I'll need to enable the AD DNS server.
+The Windows 10 client was unable to reach NVPorg.local domain because there seems to be a problem with the DNS configuration. Only the PFSense IP address is listed as a DNS server.
 
 ![kuva](https://github.com/user-attachments/assets/6ad1f503-e8e2-4956-a91b-75bec0b63b9c)
+
+I made an error in judgement when I misconfigured the DNS server to PFSense DNS server instead of AD DNS server. I didn't install DNS server on my AD domain, I'll install it now. Before installing DNS server for my AD domain, I'll set my AD domain IP as static so that the clients will always be able to reach it using the same IP-address. I'll use the IP-address of 10.10.10.14/24 for my AD domain controller.
+
+![kuva](https://github.com/user-attachments/assets/1c9c9462-b649-45cb-a737-c1d7af06b83a)
+
+![kuva](https://github.com/user-attachments/assets/523276e7-91c7-45f6-a117-7b6c672f5b79)
+
 
 
 
