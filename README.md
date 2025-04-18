@@ -78,7 +78,6 @@ Now it is time to access the PFSense WebConfigurator on Ubuntu VM's web browser 
 
 While we're at it let's check the firewall rules for the LAN. There are three LAN firewall rules by default. The first one is the Anti-lockout rule, which prevents locking out an administrator from the web interface. The second and the third rule are there to allow all traffic on the LAN for IPv4 and IPv6 protocols respectively. I'll return to firewall rules later.
 
-
 ![firewall](https://github.com/user-attachments/assets/a22ae55a-88f2-445b-93d7-cae70af7cb44)
 
 ### Setting up Splunk on Ubuntu VM
@@ -135,8 +134,13 @@ I selected Windows Server 2016 for Forest/Domain functional level. I disabled AD
 
 ![kuva](https://github.com/user-attachments/assets/c07a920d-09dc-43a3-a229-fe34db9cde80)
 
+I have now configured AD domain and domain controller. Next I will connect the Windows 10 user to AD domain. First I'll disable the windows server firewall (windows 10 firewall is already disabled) to make sure that the firewalls don't block the connection. Oh and before I forget, I'll have to make sure that the DNS server for both Windows 10 and Windows server host are configured to 10.10.10.254 (the IP address of PFSense host). I will disable IPv6 for both Windows hosts as it is not needed.
 
+![kuva](https://github.com/user-attachments/assets/e5891997-19df-4955-846c-c0c71c1e0271)
 
+I allowed remote connections on Windows server VM. I opened system properties on Windows 10 VM and connected the host to the newly created domain.
+
+![kuva](https://github.com/user-attachments/assets/8677398b-3de5-4778-9535-d6fd6f5b5186)
 
 
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
