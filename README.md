@@ -122,7 +122,7 @@ I downloaded Windows server 2022 trial ISO from Microsoft official web page. I c
 
 ![kuva](https://github.com/user-attachments/assets/53e89670-51e4-4150-bbdd-900c1ca79c7e)
 
-Windows AD domain controller VM is up and running. Now I'm going to configure Active Directory Domain Services (AD DS).
+Windows AD domain controller VM is up and running. This host is configured automatically with IP-address of 10.10.10.3 by DHCP-server. I pinged PFSense gateway and made sure the connection is established. Now I'm going to configure Active Directory Domain Services (AD DS).
 
 ![kuva](https://github.com/user-attachments/assets/3976b2c2-961e-417a-b4ea-a107a363fb2b)
 
