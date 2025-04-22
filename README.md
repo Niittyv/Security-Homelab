@@ -82,11 +82,26 @@ While we're at it let's check the firewall rules for the LAN. There are three LA
 
 ### Setting up Splunk on Ubuntu VM
 
-First I'll run
-'''
+First I need to register on splunk.com and activate free enterprise trial for 60 days. After my trial expires I can switch to Splunk free with limited features.
+
+I run the following command to update all installation packages. 
+```
 sudo apt-get update && upgrade
-'''
-To update all the installation packages. 
+```
+
+#### Enabling shared clipboard
+
+I copied the .deb wget link from splunk.com to download and install splunk on my Linux VM. What annoys me currently though is that the clipboard between my Windows desktop and my Ubuntu VM are not shared so I can not copy & paste the wget link to my Ubuntu VM. First I have to enable the shared bidirectional clipboard on VirtualBox and then I need to install VirtualBox quest additions from an .ISO that is provided by VirtualBox. I execute the .run file and it says that the system is currently not set up to build kernel modules:
+
+![kuva](https://github.com/user-attachments/assets/4f0366f0-71f0-42c4-bc27-dd20798363a5)
+
+I had to run
+
+```
+sudo apt-get install build-essential gcc make perl dkms
+```
+
+Now I'm able to install VirtulBox quest additions and after the installation was complete my bidirectional clipboard became functional and now I'm able to copy & paste the wget link to download Splunk.
 
 ## Setting up Windows 10 workstation VM
 
