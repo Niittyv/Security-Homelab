@@ -103,6 +103,27 @@ sudo apt-get install build-essential gcc make perl dkms
 
 Now I'm able to install VirtulBox quest additions and after the installation was complete my bidirectional clipboard became functional and now I'm able to copy & paste the wget link to download Splunk.
 
+![kuva](https://github.com/user-attachments/assets/31c2219e-9334-4188-8c45-0fc8aa9ea0e3)
+
+I installed Splunk:
+
+![kuva](https://github.com/user-attachments/assets/18bea00d-cfce-4665-bc35-e88e608d77b8)
+
+Splunk is located at /opt. I will start Splunk using the command
+
+```
+sudo /opt/splunk/bin/splunk start
+```
+
+After needing to accept the license I set my administrator username to NVP. The installation is complete. I can access Splunk web interface at http://ubuntuserver:8000.
+
+![kuva](https://github.com/user-attachments/assets/913f7c98-12cb-4f7d-9cf6-af1e386873ec)
+
+In server settings I want to enable SSL to make the HTTP secure.
+
+![kuva](https://github.com/user-attachments/assets/ef46b975-a039-47c6-a004-cf44019e215c)
+
+
 ## Setting up Windows 10 workstation VM
 
 This device simulates a company employee's workstation. I downloaded a Windows 10 media creation tool from Microsoft's official web server. I use this tool to create an installation .ISO image. I built a Windows VM using the .ISO image on VirtualBox and allocated 2048MB of RAM, 1 CPU core and 50gb of dynamic disc space. I connected the VM to the internal network with and selected AMD PCnet-FAST III (Am79C973) as the network adapter. I booted the VM and started the Windows 10 Pro installation process.
