@@ -123,9 +123,18 @@ In server settings I want to enable SSL to make the HTTP secure.
 
 ![kuva](https://github.com/user-attachments/assets/ef46b975-a039-47c6-a004-cf44019e215c)
 
-### Collecting logs from endpoints
+### Universal receiver/indexer
 
-I need to configure universal receiver on my Splunk VM and universal forwarders on my Windows VMs to collect data from endpoints.   
+I need to configure universal receiver on my Splunk VM to collect logs from endpoints. First I want to make sure that port 9997 is not in use:
+
+![kuva](https://github.com/user-attachments/assets/ce3ed740-3642-4439-9cb1-b69f39e5022b)
+
+The command above returned nothing which means that port 9997 is available for port listening activity. I'll assign this port to universal receiver.
+
+![kuva](https://github.com/user-attachments/assets/f94e2ec8-bcbf-4da9-b06d-774d4c3f4bb6)
+
+
+
 
 
 ## Setting up Windows 10 workstation VM
