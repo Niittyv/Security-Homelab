@@ -6,6 +6,14 @@ As an external adversary I've decided to use VirtualBox with Kali Linux VM insta
 
 ![homelab](https://github.com/user-attachments/assets/f7298791-ae1f-4924-b34c-c824ee7413be)
 
+Here are the intended host IP-addresses:
+
+10.10.10.0/24
+
+PFSense VM: 10.10.10.254
+Ubuntu VM: 10.10.10.1
+Windows Server 2022 (Active Directory Domain controller): 10.10.10.14
+
 
 ## Setting up PFSense Gateway VM
 
@@ -242,6 +250,12 @@ The Splunk universal forwarder installation file is located inside the shared fo
 ![kuva](https://github.com/user-attachments/assets/25551612-bb9b-44c0-9fe5-4506d412045f)
 
 I will repeat the process on my Windows 10 VM after which I will install the universal forwarders.
+
+When installing universal forwarder, I'll need to specify the receiving indexer's IP-address and the listening port so that the forwarder knows where to send the log data. In my case I use my Ubuntu VM's IP-address and port 9997 which I reserved earlier for Splunk universal receiver on Ubuntu VM. 
+
+![kuva](https://github.com/user-attachments/assets/f1f70e45-1799-4aca-b18e-94ff6f5ce86d)
+
+
 
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
 
