@@ -221,7 +221,27 @@ I'll login to the domain on my Windows 10 client:
 ![kuva](https://github.com/user-attachments/assets/6ab7cf03-0170-4db1-84f8-036b355e7589)
 ![kuva](https://github.com/user-attachments/assets/ced4764d-c8f0-4f68-9b34-46f6d1eebfa0)
 
+### Universal forwarders on Windows VMs
 
+I need to set up universal forwarders on Windows 10 and Windows server 2022 VMs to send system logs from Windows machines to Splunk on Ubuntu VM. I'll download the Splunk universal forwarder installer file from Splunk's website to my host PC and transfer the file to both Windows VMs. 
+
+![kuva](https://github.com/user-attachments/assets/aed0d236-b682-4f77-8566-4f7dd0a1fed4)
+
+Before I can transfer the universal forwarder installation files to Windows VMs I need to first install Guest Additions on both Windows VMs so that I can share files between my host PC and virtualbox machines. 
+
+After I have Installed Guest Additions on both Windows VMs, I'll create a shared folder so that I can send the Splunk universal forwarder installer file from my host PC to Windows VMs. Because I have Guest Additions installed, I can check "Auto-mount" and the shared folder should appear as a drive-letter on my Windows VMs.
+
+![kuva](https://github.com/user-attachments/assets/19619d80-b8b6-4953-b8e5-8cb858e80f5b)
+
+Now after booting my Windows server 2022 VM, I can find the shared folder drive. 
+
+![kuva](https://github.com/user-attachments/assets/04c4c16a-0551-468a-a569-bcdee75589d8)
+
+The Splunk universal forwarder installation file is located inside the shared folder.
+
+![kuva](https://github.com/user-attachments/assets/25551612-bb9b-44c0-9fe5-4506d412045f)
+
+I will repeat the process on my Windows 10 VM after which I will install the universal forwarders.
 
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
 
