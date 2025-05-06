@@ -260,6 +260,8 @@ The installation is complete. With Windows firewall enabled, I would need to set
 
 #### Universal forwarders configuration files
 
+C:\Program Files\SplunkUniversalForwarder\etc\apps\SplunkUniversalForwarder\local
+
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
 
 I installed VirtualBox on my laptop but forgot to run the installation file as an administrator. This led to VirtualBox not being allowed to utilize CPU resources for virtualization, even though virtualization is enabled on BIOS. I reinstalled VirtualBox as an administrator and now I'm allowed to access CPU resources and run virtual machines. 
