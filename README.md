@@ -137,12 +137,11 @@ I need to configure universal receiver on my Splunk VM to collect logs from endp
 
 ![kuva](https://github.com/user-attachments/assets/ce3ed740-3642-4439-9cb1-b69f39e5022b)
 
-The command above returned nothing which means that port 9997 is available for port listening activity. I'll assign this port to universal receiver.
+The command above returned nothing which means that port 9997 is available for listening activity. I'll assign this port to universal receiver.
 
 ![kuva](https://github.com/user-attachments/assets/f94e2ec8-bcbf-4da9-b06d-774d4c3f4bb6)
 
-
-
+The Ubuntu ufw (uncomplicated firewall) is disabled by default, so I don't need to create a firewall rule to allow inbound traffic coming from Splunk application or TCP/UDP port 9997.
 
 
 ## Setting up Windows 10 workstation VM
@@ -249,13 +248,11 @@ The Splunk universal forwarder installation file is located inside the shared fo
 
 ![kuva](https://github.com/user-attachments/assets/25551612-bb9b-44c0-9fe5-4506d412045f)
 
-I will repeat the process on my Windows 10 VM after which I will install the universal forwarders.
-
-When installing universal forwarder, I'll need to specify the receiving indexer's IP-address and the listening port so that the forwarder knows where to send the log data. In my case I use my Ubuntu VM's IP-address and port 9997 which I reserved earlier for Splunk universal receiver on Ubuntu VM. 
+When installing universal forwarder, I'll need to specify the receiving indexer's IP-address and the listening port so that the forwarder knows where to send the log data. In my case I use my Ubuntu VM's IP-address and port 9997 which I reserved earlier for Splunk universal receiver on Ubuntu VM. NOTE: you don't need to specify port if you're using default port 9997 for your listener so you can leave the field blank.
 
 ![kuva](https://github.com/user-attachments/assets/f1f70e45-1799-4aca-b18e-94ff6f5ce86d)
 
-
+The installation is complete. With Windows firewall enabled, I would need to set an outbound rule to allow any outgoing traffic from Splunk application or TCP/UDP port of 9997. I have the Windows firewall disabled on both Windows machines so I don't need to worry about changing firewall rules for now. Later I will set up the Windows firewalls and I need to create outbound rules to allow outgoing traffic from universal forwarders.
 
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
 
