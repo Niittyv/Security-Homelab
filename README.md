@@ -8,7 +8,7 @@ As an external adversary I've decided to use VirtualBox with Kali Linux VM insta
 
 Here are the intended host IP-addresses:
 
-10.10.10.0/24
+10.10.10.0/24:
 
 PFSense VM: 10.10.10.254
 
