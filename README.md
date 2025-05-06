@@ -11,7 +11,9 @@ Here are the intended host IP-addresses:
 10.10.10.0/24
 
 PFSense VM: 10.10.10.254
+
 Ubuntu VM: 10.10.10.1
+
 Windows Server 2022 (Active Directory Domain controller): 10.10.10.14
 
 
@@ -253,6 +255,8 @@ When installing universal forwarder, I'll need to specify the receiving indexer'
 ![kuva](https://github.com/user-attachments/assets/f1f70e45-1799-4aca-b18e-94ff6f5ce86d)
 
 The installation is complete. With Windows firewall enabled, I would need to set an outbound rule to allow any outgoing traffic from Splunk application or TCP/UDP port of 9997. I have the Windows firewall disabled on both Windows machines so I don't need to worry about changing firewall rules for now. Later I will set up the Windows firewalls and I need to create outbound rules to allow outgoing traffic from universal forwarders.
+
+#### Universal forwarders configuration files
 
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
 
