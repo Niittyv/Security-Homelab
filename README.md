@@ -250,7 +250,9 @@ The Splunk universal forwarder installation file is located inside the shared fo
 
 ![kuva](https://github.com/user-attachments/assets/25551612-bb9b-44c0-9fe5-4506d412045f)
 
-When installing universal forwarder, I'll need to specify the receiving indexer's IP-address and the listening port so that the forwarder knows where to send the log data. In my case I use my Ubuntu VM's IP-address and port 9997 which I reserved earlier for Splunk universal receiver on Ubuntu VM. NOTE: you don't need to specify port if you're using default port 9997 for your listener so you can leave the field blank.
+When installing universal forwarder, I'll need to specify the receiving indexer's IP-address and the listening port so that the forwarder knows where to send the log data. In my case I use my Ubuntu VM's IP-address and port 9997 which I reserved earlier for Splunk universal receiver on Ubuntu VM. 
+
+NOTE: you don't need to specify port if you're using default port 9997 for your listener so you can leave the field blank.
 
 ![kuva](https://github.com/user-attachments/assets/f1f70e45-1799-4aca-b18e-94ff6f5ce86d)
 
