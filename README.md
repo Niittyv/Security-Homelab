@@ -232,7 +232,7 @@ I'll login to the domain on my Windows 10 client:
 
 I need to set up universal forwarders on Windows 10 and Windows server 2022 VMs to send system logs from Windows machines to Splunk on Ubuntu VM. I'll download the Splunk universal forwarder installer file from Splunk's website to my host PC and transfer the file to both Windows VMs. 
 
-![kuva](https://github.com/user-attachments/assets/aed0d236-b682-4f77-8566-4f7dd0a1fed4)
+![kuva](https://github.com/user-attachments/assets/272cd05f-62a7-409f-8273-03a4fff98e6a)
 
 Before I can transfer the universal forwarder installation files to Windows VMs I need to first install Guest Additions on both Windows VMs so that I can share files between my host PC and virtualbox machines. 
 
