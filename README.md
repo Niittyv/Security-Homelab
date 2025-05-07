@@ -260,7 +260,9 @@ The installation is complete. With Windows firewall enabled, I would need to set
 
 #### Universal forwarders configuration files
 
-C:\Program Files\SplunkUniversalForwarder\etc\apps\SplunkUniversalForwarder\local
+The universal forwarder config files reside in C:\Program Files\SplunkUniversalForwarder\etc\apps\SplunkUniversalForwarder\local. There are two config files that I need to set up:
+1. inputs.conf. This configuration file will tell the universal forwarder where to gather the logs from. I plan to gather logs from Windows Event Log (winevtlog) located in C:\Windows\System32\winevt\Logs.
+2. outputs.conf. This file defines where the collected logs should be forwarded to. It should include the IP-address and port number of the universal indexer.  
 
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
 
