@@ -258,11 +258,15 @@ NOTE: you don't need to specify port if you're using default port 9997 for your 
 
 The installation is complete. With Windows firewall enabled, I would need to set an outbound rule to allow any outgoing traffic from Splunk application or TCP/UDP port of 9997. I have the Windows firewall disabled on both Windows machines so I don't need to worry about changing firewall rules for now. Later I will set up the Windows firewalls and I need to create outbound rules to allow outgoing traffic from universal forwarders.
 
-#### Universal forwarders configuration files
+#### Universal forwarders configuration files on Windows VMs
 
 The universal forwarder config files reside in C:\Program Files\SplunkUniversalForwarder\etc\apps\SplunkUniversalForwarder\local. There are two config files that I need to set up:
 1. inputs.conf. This configuration file will tell the universal forwarder where to gather the logs from. I plan to gather logs from Windows Event Log (winevtlog) located in C:\Windows\System32\winevt\Logs.
-2. outputs.conf. This file defines where the collected logs should be forwarded to. It should include the IP-address and port number of the universal indexer.  
+2. outputs.conf. This file defines where the collected logs should be forwarded to. It should include the IP-address and port number of the universal indexer.
+
+Before I continue configuring my universal forwarders I want to explore my options. The simplest option would be to edit universal forwarder inputs.conf and outputs.conf files directly to gather logs from winevtlog and send them to the indexer. However, I will need the Splunk Add-on for Windows if I want a proper field extraction and better search experience in Splunk. Splunk Add-on for windows will also generate a neat inputs.conf template for my universal forwarder.
+
+I've decided to download Splunk Add-on for Windows. I need to download the Add-on for both the indexer on Ubuntu VM and for the universal forwarders on Windows VMs. 
 
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
 
