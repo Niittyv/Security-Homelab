@@ -266,7 +266,11 @@ The universal forwarder config files reside in C:\Program Files\SplunkUniversalF
 
 Before I continue configuring my universal forwarders I want to explore my options. The simplest option would be to edit universal forwarder inputs.conf and outputs.conf files directly to gather logs from winevtlog and send them to the indexer. However, I will need the Splunk Add-on for Windows if I want a proper field extraction and better search experience in Splunk. Splunk Add-on for windows will also generate a neat inputs.conf template for my universal forwarder.
 
-I've decided to download Splunk Add-on for Windows. I need to download the Add-on for both the indexer on Ubuntu VM and for the universal forwarders on Windows VMs. 
+I've decided to download Splunk Add-on for Windows. I need to download the Add-on for both the indexer on Ubuntu VM and for the universal forwarders on Windows VMs. I can download Splunk Add-on for Windows from Splunk website on my home PC and then share the Add-on file to VMs by utilizing shared folders. I have Guest Additions installed on all VMs so I can easily share files via shared folder. 
+
+<img width="942" height="209" alt="kuva" src="https://github.com/user-attachments/assets/1427f90d-bb3e-483c-82e2-93a35594ff42" />
+
+
 
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
 
