@@ -298,7 +298,7 @@ Running the command through CLI did the trick. I can now find the Add-on listed 
 
 <img width="1454" height="782" alt="kuva" src="https://github.com/user-attachments/assets/1bb70485-faff-4bd4-9200-053a14a8fd12" />
 
-Maybe there is an issue with the browser because I couldn't install the Add-on via web UI. The size limit of installations through web UI is 50MB while the Add-on file is just 211KB.
+Maybe there is an issue with the browser web session because I couldn't install the Add-on via web UI. The CLI doesn't depend on web sessions. The size limit of installations through web UI is 50MB while the Add-on file is just 211KB so the size can't be the issue either.
 
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
 
