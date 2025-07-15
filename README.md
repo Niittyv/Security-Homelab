@@ -280,8 +280,9 @@ I don't have the permission to access shared folder on my Ubuntu VM via GUI. I n
 
 I copied the Add-on folder from shared folder to /home/jasper/. Now I need to open the Splunk application on my Ubuntu VM so that I can integrate the Add-on to the indexer.
 
+<img width="1446" height="753" alt="kuva" src="https://github.com/user-attachments/assets/04cf926e-8a20-471c-8956-f98d3063525f" />
 
-
+On my Ubuntu VM splunk instance I navigated to Apps and choose "Install app from file". This way I can integrate the Windows Add-on to Splunk from local files without needing internet connection. 
 
 
 
