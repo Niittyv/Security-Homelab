@@ -290,7 +290,15 @@ The Add-on folder needs to be in .spl or .tar.gz format. I need to archive and c
 
 <img width="857" height="49" alt="kuva" src="https://github.com/user-attachments/assets/464aefcf-fc39-498f-bb3b-5ece6f2ae8c8" />
 
+I tried to install the Add-on via web UI but it doesn't seem to work. Whenever I press "Upload" the page just refreshes and nothing happens. I'll try to use CLI to install the Add-on.
 
+<img width="1168" height="111" alt="kuva" src="https://github.com/user-attachments/assets/f3afb3ce-db45-4ca6-b63f-1471dde686e0" />
+
+Running the command through CLI did the trick. I can now find the Add-on listed on Apps list:
+
+<img width="1454" height="782" alt="kuva" src="https://github.com/user-attachments/assets/1bb70485-faff-4bd4-9200-053a14a8fd12" />
+
+Maybe there is an issue with the browser because I couldn't install the Add-on via web UI. The size limit of installations through web UI is 50MB while the Add-on file is just 211KB.
 
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
 
