@@ -282,7 +282,13 @@ I copied the Add-on folder from shared folder to /home/jasper/. Now I need to op
 
 <img width="1446" height="753" alt="kuva" src="https://github.com/user-attachments/assets/04cf926e-8a20-471c-8956-f98d3063525f" />
 
-On my Ubuntu VM splunk instance I navigated to Apps and choose "Install app from file". This way I can integrate the Windows Add-on to Splunk from local files without needing internet connection. 
+On my Ubuntu VM Splunk instance I navigated to Apps and chose "Install app from file". This way I can integrate the Windows Add-on to Splunk from local files without needing internet connection. 
+
+<img width="1435" height="759" alt="kuva" src="https://github.com/user-attachments/assets/f40443d2-a6e9-48dd-be65-895328f58eaa" />
+
+The Add-on folder needs to be in .spl or .tar.gz format. I need to archive and compress Splunk_TA_windows folder into .tar.gz format. 
+
+<img width="857" height="49" alt="kuva" src="https://github.com/user-attachments/assets/464aefcf-fc39-498f-bb3b-5ece6f2ae8c8" />
 
 
 
