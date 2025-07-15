@@ -266,9 +266,22 @@ The universal forwarder config files reside in C:\Program Files\SplunkUniversalF
 
 Before I continue configuring my universal forwarders I want to explore my options. The simplest option would be to edit universal forwarder inputs.conf and outputs.conf files directly to gather logs from winevtlog and send them to the indexer. However, I will need the Splunk Add-on for Windows if I want a proper field extraction and better search experience in Splunk. Splunk Add-on for windows will also generate a neat inputs.conf template for my universal forwarder.
 
-I've decided to download Splunk Add-on for Windows. I need to download the Add-on for both the indexer on Ubuntu VM and for the universal forwarders on Windows VMs. I can download Splunk Add-on for Windows from Splunk website on my home PC and then share the Add-on file to VMs by utilizing shared folders. I have Guest Additions installed on all VMs so I can easily share files via shared folder. 
+I've decided to download Splunk Add-on for Windows. I need to download the Add-on for both the indexer on Ubuntu VM and for the universal forwarders on Windows VMs. I can download Splunk Add-on for Windows from Splunk website on my home PC and then share the Add-on folder to VMs by utilizing shared folder. I have Guest Additions installed on all VMs so I can easily share files via shared folder. 
 
 <img width="942" height="209" alt="kuva" src="https://github.com/user-attachments/assets/1427f90d-bb3e-483c-82e2-93a35594ff42" />
+
+I inserted Splunk Add-on for Windows into the shared folder.
+
+<img width="884" height="544" alt="kuva" src="https://github.com/user-attachments/assets/26e9264e-e7c6-4e99-8440-05b4326ca813" />
+
+I don't have the permission to access shared folder on my Ubuntu VM via GUI. I need to access the shared folder by using terminal and give myself root rights. The shared folder is located in /media/.
+
+<img width="805" height="267" alt="kuva" src="https://github.com/user-attachments/assets/bc6cab5f-9fbd-42cb-9381-dcf1ee5443ae" />
+
+I copied the Add-on folder from shared folder to /home/jasper/. Now I need to open the Splunk application on my Ubuntu VM so that I can integrate the Add-on to the indexer.
+
+
+
 
 
 
