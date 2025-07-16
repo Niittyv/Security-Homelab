@@ -342,7 +342,17 @@ First let's make sure that the indexer is listening to port 9997.
 
 Looking at the "Search and reporting" tab on Splunk I can see that the logs are being received from the Windows Server 2022 machine and the indexer is being able to capture all WinEvtLogs that we enabled in inputs.conf file. Great success!
 
-Next up I will repeat the process of installing universal forwarder and Splunk Add-on for Windows on my Windows 10 VM. After I've repeated the process I will start looking at the parsing and filtering of log data on the indexer.
+Now I will start looking at the parsing and filtering of log data on the indexer.
+
+<img width="1494" height="789" alt="kuva" src="https://github.com/user-attachments/assets/5d30de76-a11c-4589-b158-3622e81f8750" />
+
+Looking at the format of WinEvtLogs events, they are not easily readable. I need to change the XML-parsing of OS Logs in inputs.conf file from "true" to "false". Remember to restart the SplunkForwarder service on the Windows VM for the changes to take effect!
+
+<img width="1568" height="906" alt="kuva" src="https://github.com/user-attachments/assets/838e5afc-5885-4b6f-a738-6410677ca6de" />
+
+There! The events are now easily readable.
+
+Next up I will repeat the process of installing universal forwarder and Splunk Add-on for Windows on my Windows 10 VM.
 
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
 
