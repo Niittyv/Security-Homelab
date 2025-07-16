@@ -230,7 +230,7 @@ I'll login to the domain on my Windows 10 client:
 ![kuva](https://github.com/user-attachments/assets/6ab7cf03-0170-4db1-84f8-036b355e7589)
 ![kuva](https://github.com/user-attachments/assets/ced4764d-c8f0-4f68-9b34-46f6d1eebfa0)
 
-### Universal forwarders on Windows VMs
+## Universal forwarders on Windows VMs
 
 I need to set up universal forwarders on Windows 10 and Windows server 2022 VMs to send system logs from Windows machines to Splunk on Ubuntu VM. I'll download the Splunk universal forwarder installer file from Splunk's website to my host PC and transfer the file to both Windows VMs. 
 
@@ -270,7 +270,9 @@ I've decided to download Splunk Add-on for Windows. I need to download the Add-o
 
 <img width="942" height="209" alt="kuva" src="https://github.com/user-attachments/assets/1427f90d-bb3e-483c-82e2-93a35594ff42" />
 
-I inserted Splunk Add-on for Windows into the shared folder.
+I inserted Splunk Add-on for Windows into the shared folder. I will now access the shared folder on my Ubuntu VM.
+
+#### Installing Splunk Add-on for Windows for the indexer (Splunk on Ubuntu VM)
 
 <img width="884" height="544" alt="kuva" src="https://github.com/user-attachments/assets/26e9264e-e7c6-4e99-8440-05b4326ca813" />
 
@@ -298,7 +300,27 @@ Running the command through CLI did the trick. I can now find the Add-on listed 
 
 <img width="1454" height="782" alt="kuva" src="https://github.com/user-attachments/assets/1bb70485-faff-4bd4-9200-053a14a8fd12" />
 
-Maybe there is an issue with the browser web session because I couldn't install the Add-on via web UI. The CLI doesn't depend on web sessions. The size limit of installations through web UI is 50MB while the Add-on file is just 211KB so the size can't be the issue either.
+Maybe there was an issue with the browser web session because I couldn't install the Add-on via web UI. Fortunately the CLI doesn't depend on web sessions. The size limit of installations through web UI is 50MB while the Add-on file is just 211KB so the size can't be the issue either.
+
+#### Installing Splunk Add-on for Windows for the universal forwarders (Windows VMs)
+
+<img width="1142" height="530" alt="kuva" src="https://github.com/user-attachments/assets/1f02b506-d0ff-4bd0-9777-7c20230a89e2" />
+
+On my Windows Server 2022 VM, I copied the Add-on from shared folder to pasted it to SplunkUniversalForwarder/etc/apps. 
+
+<img width="784" height="393" alt="kuva" src="https://github.com/user-attachments/assets/644450f0-b358-4e29-9584-22fb1893f5b4" />
+
+In Splunk_TA_windows/default I can find a template for inputs.conf. I will not edit it here directly but instead I'll create a new Splunk_TA_windows/local path and paste the input.conf there.
+
+<img width="796" height="489" alt="kuva" src="https://github.com/user-attachments/assets/453f9d5a-ccf2-48f3-8269-7639baa939a3" />
+
+Here is a screenshot of the OS Logs portion of local/inputs.conf file. For the purpose of later filtering practise on Splunk indexer I will enable the gathering of all WinEvtLogs. 
+
+<img width="922" height="583" alt="kuva" src="https://github.com/user-attachments/assets/49723b73-2a93-45fb-adf7-e0a9cfc3cc05" />
+
+Next I need to restart SplunkForwarder service for the changes to take effect.
+
+
 
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
 
