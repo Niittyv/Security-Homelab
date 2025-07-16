@@ -340,7 +340,7 @@ First let's make sure that the indexer is listening to port 9997.
 <img width="794" height="225" alt="kuva" src="https://github.com/user-attachments/assets/96cbb39b-b428-4125-8e0e-9eae3f3ac7df" />
 <img width="778" height="271" alt="kuva" src="https://github.com/user-attachments/assets/89b82d22-eb0a-487b-a8a4-42b67a34fc61" />
 
-The logs are being received from the Windows Server 2022 machine and the indexer is being able to capture all WinEvtLogs that we enabled in inputs.conf file. Great success!
+Looking at the "Search and reporting" tab on Splunk I can see that the logs are being received from the Windows Server 2022 machine and the indexer is being able to capture all WinEvtLogs that we enabled in inputs.conf file. Great success!
 
 Next up I will repeat the process of installing universal forwarder and Splunk Add-on for Windows on my Windows 10 VM. After I've repeated the process I will start looking at the parsing and filtering of log data on the indexer.
 
