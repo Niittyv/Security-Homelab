@@ -310,6 +310,14 @@ Maybe there was an issue with the browser web session because I couldn't install
 
 On my Windows Server 2022 VM, I copied the Add-on from shared folder and pasted it to SplunkUniversalForwarder/etc/apps. 
 
+<img width="973" height="559" alt="kuva" src="https://github.com/user-attachments/assets/5dde04a7-56dd-42ca-813a-1b2f5120c46d" />
+
+The output.conf file is located in SplunkUniversalForwarder/etc/system/local. 
+
+<img width="786" height="251" alt="kuva" src="https://github.com/user-attachments/assets/e459cb65-a0d2-47f7-95e9-7bccf58d110d" />
+
+The output.conf file includes the server address where the logs are being forwarded to.
+
 <img width="784" height="393" alt="kuva" src="https://github.com/user-attachments/assets/644450f0-b358-4e29-9584-22fb1893f5b4" />
 
 In Splunk_TA_windows/default I can find a template for inputs.conf. I will not edit it here directly but instead I'll create a new Splunk_TA_windows/local path and paste the input.conf there.
