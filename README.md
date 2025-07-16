@@ -308,7 +308,7 @@ Maybe there was an issue with the browser web session because I couldn't install
 
 <img width="1142" height="530" alt="kuva" src="https://github.com/user-attachments/assets/1f02b506-d0ff-4bd0-9777-7c20230a89e2" />
 
-On my Windows Server 2022 VM, I copied the Add-on from shared folder to pasted it to SplunkUniversalForwarder/etc/apps. 
+On my Windows Server 2022 VM, I copied the Add-on from shared folder and pasted it to SplunkUniversalForwarder/etc/apps. 
 
 <img width="784" height="393" alt="kuva" src="https://github.com/user-attachments/assets/644450f0-b358-4e29-9584-22fb1893f5b4" />
 
@@ -334,6 +334,7 @@ First let's make sure that the indexer is listening to port 9997.
 
 The logs are being received from the Windows Server 2022 machine and the indexer is being able to capture all WinEvtLogs that we enabled in inputs.conf file. Great success!
 
+Next up I will repeat the process of installing universal forwarder and Splunk Add-on for Windows on my Windows 10 VM. After I've repeated the process I will start looking at the parsing and filtering of log data on the indexer.
 
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
 
