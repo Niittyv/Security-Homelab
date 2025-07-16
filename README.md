@@ -346,7 +346,7 @@ Now I will start looking at the parsing and filtering of log data on the indexer
 
 <img width="1494" height="789" alt="kuva" src="https://github.com/user-attachments/assets/5d30de76-a11c-4589-b158-3622e81f8750" />
 
-Looking at the format of WinEvtLogs events, they are not easily readable. I need to change the XML-parsing of OS Logs in inputs.conf file from "true" to "false". Remember to restart the SplunkForwarder service on the Windows VM for the changes to take effect!
+Looking at the format of WinEvtLogs events, they are not easily readable. I need to change the renderXML of OS Logs in inputs.conf file from "true" to "false". Remember to restart the SplunkForwarder service on the Windows VM for the changes to take effect!
 
 <img width="1568" height="906" alt="kuva" src="https://github.com/user-attachments/assets/838e5afc-5885-4b6f-a738-6410677ca6de" />
 
