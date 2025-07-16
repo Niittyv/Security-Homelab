@@ -272,6 +272,7 @@ I've decided to download Splunk Add-on for Windows. I need to download the Add-o
 
 I inserted Splunk Add-on for Windows into the shared folder. I will now access the shared folder on my Ubuntu VM.
 
+
 #### Installing Splunk Add-on for Windows for the indexer (Splunk on Ubuntu VM)
 
 <img width="884" height="544" alt="kuva" src="https://github.com/user-attachments/assets/26e9264e-e7c6-4e99-8440-05b4326ca813" />
@@ -302,6 +303,7 @@ Running the command through CLI did the trick. I can now find the Add-on listed 
 
 Maybe there was an issue with the browser web session because I couldn't install the Add-on via web UI. Fortunately the CLI doesn't depend on web sessions. The size limit of installations through web UI is 50MB while the Add-on file is just 211KB so the size can't be the issue either.
 
+
 #### Installing Splunk Add-on for Windows for the universal forwarders (Windows VMs)
 
 <img width="1142" height="530" alt="kuva" src="https://github.com/user-attachments/assets/1f02b506-d0ff-4bd0-9777-7c20230a89e2" />
@@ -320,6 +322,17 @@ Here is a screenshot of the OS Logs portion of local/inputs.conf file. For the p
 
 Next I need to restart SplunkForwarder service for the changes to take effect.
 
+
+#### Receiving and filtering logs on the indexer (Splunk Ubuntu VM)
+
+<img width="1452" height="596" alt="kuva" src="https://github.com/user-attachments/assets/a5dac9e5-9278-4242-9d8e-1ac08a776a70" />
+
+First let's make sure that the indexer is listening to port 9997.
+
+<img width="794" height="225" alt="kuva" src="https://github.com/user-attachments/assets/96cbb39b-b428-4125-8e0e-9eae3f3ac7df" />
+<img width="778" height="271" alt="kuva" src="https://github.com/user-attachments/assets/89b82d22-eb0a-487b-a8a4-42b67a34fc61" />
+
+The logs are being received from the Windows Server 2022 machine and the indexer is being able to capture all WinEvtLogs that we enabled in inputs.conf file. Great success!
 
 
 ## Setting up Linux Kali VM on my Thinkpad X230 laptop
