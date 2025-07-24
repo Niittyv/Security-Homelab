@@ -1,20 +1,20 @@
 # Security-Homelab
 
-I've decided to build a VirtualBox internal network to simulate a corporate LAN environment. The VM devices inside the internal network can only communicate between each other and the PFSense gateway VM which acts as a firewall and a router allowing communication with external devices. Inside the internal network there is a Windows Workstation VM, an AD domain controller VM and an Ubuntu VM with Splunk installed to gather logs from the gateway and Windows devices.
+I've decided to build a VirtualBox internal network to simulate a corporate LAN environment. The VM devices inside the internal network can only communicate between each other and the PFSense gateway VM which acts as a firewall and a router allowing communication with external devices. Inside the internal network there is a Windows Workstation VM, an AD domain controller VM and an Ubuntu VM with Splunk installed to gather logs from the gateway and Windows devices. The devices inside the internal network can only communicate with each other through PFSense VM, which works as an internal network switch.
 
 As an external adversary I've decided to use VirtualBox with Kali Linux VM installed on my Thinkpad X230 laptop. This external VM connects to the simulated corporate network through the PFSense gateway VM via Bridged connection. I want the Kali VM to act as an independent host capable of interacting with surrounding hosts on the same LAN, that is why I chose my Kali VM to run in a bridged networking mode. The bridged mode allows my Kali VM to have its own IP-address on my home network so that it can interact with other hosts on the same network, simulating an attacker who tries to infiltrate into a corporate network. As a note to myself, I have to be careful though not to execute malware downloaded from the internet on this bridged VM because that malware can in the worst scenario spread to other hosts in my home network including my PC.
 
 ![homelab](https://github.com/user-attachments/assets/f7298791-ae1f-4924-b34c-c824ee7413be)
 
-Here are the intended host IP-addresses:
-
-10.10.10.0/24:
+Here are the intended host IP-addresses for 10.10.10.0/24 internal network:
 
 PFSense VM: 10.10.10.254
 
 Ubuntu VM: 10.10.10.1
 
-Windows Server 2022 (Active Directory Domain controller): 10.10.10.14
+Windows Server 2022 VM (Active Directory Domain controller): 10.10.10.14
+
+Windows 10 VM (Windows workstation): 10.10.10.2
 
 
 ## Setting up PFSense Gateway VM
